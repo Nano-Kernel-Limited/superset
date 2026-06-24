@@ -136,3 +136,19 @@ try:
     )
 except ImportError:
     logger.info("Using default Docker config...")
+
+# --- Custom API Gateway Auth Configuration ---
+from custom_security_manager import CustomHeaderSecurityManager
+
+CUSTOM_SECURITY_MANAGER = CustomHeaderSecurityManager
+AUTH_USER_REGISTRATION = False
+AUTH_ROLES_SYNC_AT_LOGIN = True
+
+def mutate_app(app):
+    @app.before_request
+    def custom_auth():
+        from flask import current_app
+        if hasattr(current_app, 'appbuilder') and hasattr(current_app.appbuilder.sm, 'header_auth_hook'):
+            current_app.appbuilder.sm.header_auth_hook()
+
+FLASK_APP_MUTATOR = mutate_app
