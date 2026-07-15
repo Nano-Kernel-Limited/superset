@@ -152,3 +152,8 @@ def mutate_app(app):
             current_app.appbuilder.sm.header_auth_hook()
 
 FLASK_APP_MUTATOR = mutate_app
+
+APP_NAME = ""
+APP_ICON = ""
+LOGO_TOOLTIP = ""
+LOGO_RIGHT_TEXT = ""
