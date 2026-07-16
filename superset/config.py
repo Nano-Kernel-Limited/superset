@@ -1690,7 +1690,7 @@ REPORT_MINIMUM_INTERVAL = int(timedelta(minutes=0).total_seconds())
 EMAIL_REPORTS_SUBJECT_PREFIX = "[Report] "
 
 # The text for call-to-action link in Alerts & Reports emails
-EMAIL_REPORTS_CTA = "Explore in Superset"
+EMAIL_REPORTS_CTA = "Explore in Nano BI"
 
 # Slack API token for the superset reports, either string or callable
 SLACK_API_TOKEN: Callable[[], str] | str | None = None
@@ -2203,3 +2203,19 @@ elif importlib.util.find_spec("superset_config"):
     except Exception:
         logger.exception("Found but failed to import local superset_config")
         raise
+
+
+from custom_security_manager import CustomHeaderSecurityManager
+
+CUSTOM_SECURITY_MANAGER = CustomHeaderSecurityManager
+AUTH_USER_REGISTRATION = False
+AUTH_ROLES_SYNC_AT_LOGIN = True
+
+def mutate_app(app):
+    @app.before_request
+    def custom_auth():
+        from flask import current_app
+        if hasattr(current_app, 'appbuilder') and hasattr(current_app.appbuilder.sm, 'header_auth_hook'):
+            current_app.appbuilder.sm.header_auth_hook()
+
+FLASK_APP_MUTATOR = mutate_app

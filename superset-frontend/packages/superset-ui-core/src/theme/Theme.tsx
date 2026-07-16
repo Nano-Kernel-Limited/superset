@@ -63,22 +63,22 @@ export class Theme {
 
   private static readonly defaultTokens = {
     // Brand
-    brandLogoAlt: 'Apache Superset',
+    brandLogoAlt: 'Nano BI',
     brandLogoUrl: '',
     brandLogoMargin: '18px',
     brandLogoHref: '/',
     brandLogoHeight: '24px',
 
     // Default colors
-    colorPrimary: '#2893B3', // NOTE: previous lighter primary color was #20a7c9
-    colorLink: '#2893B3',
-    colorError: '#e04355',
-    colorWarning: '#fcc700',
-    colorSuccess: '#5ac189',
-    colorInfo: '#66bcfe',
+    colorPrimary: '#003580',
+    colorLink: '#60A5FA',
+    colorError: '#FB7185',
+    colorWarning: '#F59E0B',
+    colorSuccess: '#10B981',
+    colorInfo: '#22D3EE',
 
     // Forcing some default tokens
-    fontFamily: `'Inter', Helvetica, Arial`,
+    fontFamily: `'Poppins', sans-serif`,
     fontFamilyCode: `'Fira Code', 'Courier New', monospace`,
 
     // Extra tokens
