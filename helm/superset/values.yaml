@@ -730,9 +730,9 @@ init:
   createAdmin: true
   adminUser:
     username: admin
-    firstname: Superset
-    lastname: Admin
-    email: admin@superset.com
+    firstname: Nano
+    lastname: BI
+    email: admin@example.com
     password: admin
   # -- List of initContainers
   # @default -- a container waiting for postgres

@@ -161,9 +161,7 @@ export const DashboardEmbedControls = ({ dashboardId, onHide }: Props) => {
   const docsDescription = extensionsRegistry.get(
     'embedded.documentation.description',
   );
-  const docsUrl =
-    extensionsRegistry.get('embedded.documentation.url') ??
-    'https://www.npmjs.com/package/@superset-ui/embedded-sdk';
+  const docsUrl = " ";
 
   return (
     <>
@@ -186,14 +184,6 @@ export const DashboardEmbedControls = ({ dashboardId, onHide }: Props) => {
           )}
         </p>
       )}
-      <p>
-        {t('For further instructions, consult the')}{' '}
-        <Typography.Link href={docsUrl} target="_blank" rel="noreferrer">
-          {docsDescription
-            ? docsDescription()
-            : t('Superset Embedded SDK documentation.')}
-        </Typography.Link>
-      </p>
       <h3>{t('Settings')}</h3>
       <Form layout="vertical">
         <FormItem
@@ -213,7 +203,7 @@ export const DashboardEmbedControls = ({ dashboardId, onHide }: Props) => {
           <Input
             id="allowed-domains"
             value={allowedDomains}
-            placeholder="superset.example.com"
+            placeholder=" "
             onChange={event => setAllowedDomains(event.target.value)}
           />
         </FormItem>
