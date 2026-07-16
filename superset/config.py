@@ -523,7 +523,7 @@ DEFAULT_FEATURE_FLAGS: dict[str, bool] = {
     "ENABLE_DASHBOARD_DOWNLOAD_WEBDRIVER_SCREENSHOT": False,
     "TAGGING_SYSTEM": False,
     "SQLLAB_BACKEND_PERSISTENCE": True,
-    "LISTVIEWS_DEFAULT_CARD_VIEW": False,
+    "LISTVIEWS_DEFAULT_CARD_VIEW": True,
     # When True, this escapes HTML (rather than rendering it) in Markdown components
     "ESCAPE_MARKDOWN_HTML": False,
     "DASHBOARD_VIRTUALIZATION": True,
@@ -532,12 +532,12 @@ DEFAULT_FEATURE_FLAGS: dict[str, bool] = {
     "DASHBOARD_VIRTUALIZATION_DEFER_DATA": False,
     # This feature flag is stil in beta and is not recommended for production use.
     "GLOBAL_ASYNC_QUERIES": False,
-    "EMBEDDED_SUPERSET": False,
+    "EMBEDDED_SUPERSET": True,
     # Enables Alerts and reports new implementation
-    "ALERT_REPORTS": False,
-    "ALERT_REPORT_TABS": False,
+    "ALERT_REPORTS": True,
+    "ALERT_REPORT_TABS": True,
     "ALERT_REPORT_SLACK_V2": False,
-    "DASHBOARD_RBAC": False,
+    "DASHBOARD_RBAC": True,
     "ENABLE_ADVANCED_DATA_TYPES": False,
     # Enabling ALERTS_ATTACH_REPORTS, the system sends email and slack message
     # with screenshot and link
@@ -550,7 +550,7 @@ DEFAULT_FEATURE_FLAGS: dict[str, bool] = {
     # This could cause the server to run out of memory or compute.
     "ALLOW_FULL_CSV_EXPORT": False,
     "ALLOW_ADHOC_SUBQUERY": False,
-    "USE_ANALOGOUS_COLORS": False,
+    "USE_ANALOGOUS_COLORS": True,
     # Apply RLS rules to SQL Lab queries. This requires parsing and manipulating the
     # query, and might break queries and/or allow users to bypass RLS. Use with care!
     "RLS_IN_SQLLAB": False,
@@ -607,20 +607,20 @@ DEFAULT_FEATURE_FLAGS: dict[str, bool] = {
     # Enables CSS Templates functionality in Settings menu and dashboard forms.
     # When disabled, users can still add custom CSS to dashboards but cannot use
     # pre-built CSS templates.
-    "CSS_TEMPLATES": True,
+    "CSS_TEMPLATES": False,
     # Allow users to optionally specify date formats in email subjects, which will
     # be parsed if enabled
     "DATE_FORMAT_IN_EMAIL_SUBJECT": False,
     # Allow metrics and columns to be grouped into (potentially nested) folders in the
     # chart builder
-    "DATASET_FOLDERS": False,
+    "DATASET_FOLDERS": True,
     # Enable Table V2 Viz plugin
-    "AG_GRID_TABLE_ENABLED": False,
+    "AG_GRID_TABLE_ENABLED": True,
     # Enable Table v2 time comparison feature
-    "TABLE_V2_TIME_COMPARISON_ENABLED": False,
+    "TABLE_V2_TIME_COMPARISON_ENABLED": True,
     # Enable support for date range timeshifts (e.g., "2015-01-03 : 2015-01-04")
     # in addition to relative timeshifts (e.g., "1 day ago")
-    "DATE_RANGE_TIMESHIFTS_ENABLED": False,
+    "DATE_RANGE_TIMESHIFTS_ENABLED": True,
 }
 
 # ------------------------------
@@ -764,7 +764,7 @@ THEME_DARK: Theme = {"algorithm": "dark"}
 # - OS preference detection is automatically enabled
 #
 # Enable UI-based theme administration for admins
-ENABLE_UI_THEME_ADMINISTRATION = True  # Allows admins to set system themes via UI
+ENABLE_UI_THEME_ADMINISTRATION = False  # Allows admins to set system themes via UI
 
 # Custom font configuration
 # Load external fonts at runtime without rebuilding the application
@@ -1673,7 +1673,7 @@ ALERT_REPORTS_DEFAULT_RETENTION = 90
 ALERT_REPORTS_DEFAULT_CRON_VALUE = "0 0 * * *"  # every day
 # If set to true no notification is sent, the worker will just log a message.
 # Useful for debugging
-ALERT_REPORTS_NOTIFICATION_DRY_RUN = False
+ALERT_REPORTS_NOTIFICATION_DRY_RUN = True
 # Max tries to run queries to prevent false errors caused by transient errors
 # being returned to users. Set to a value >1 to enable retries.
 ALERT_REPORTS_QUERY_EXECUTION_MAX_TRIES = 1
@@ -1687,7 +1687,7 @@ ALERT_MINIMUM_INTERVAL = int(timedelta(minutes=0).total_seconds())
 REPORT_MINIMUM_INTERVAL = int(timedelta(minutes=0).total_seconds())
 
 # A custom prefix to use on all Alerts & Reports emails
-EMAIL_REPORTS_SUBJECT_PREFIX = "[Report] "
+EMAIL_REPORTS_SUBJECT_PREFIX = "[Nano BI Report] "
 
 # The text for call-to-action link in Alerts & Reports emails
 EMAIL_REPORTS_CTA = "Explore in Nano BI"
