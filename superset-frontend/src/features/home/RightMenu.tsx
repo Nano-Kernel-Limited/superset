@@ -535,13 +535,13 @@ const RightMenu = ({
                 >
                   {[
                     navbarRight.show_watermark &&
-                      t('Powered by Apache Superset'),
-                    navbarRight.version_string &&
-                      `${t('Version')}: ${navbarRight.version_string}`,
-                    navbarRight.version_sha &&
-                      `${t('SHA')}: ${navbarRight.version_sha}`,
-                    navbarRight.build_number &&
-                      `${t('Build')}: ${navbarRight.build_number}`,
+                      t('Powered by Nano BI'),
+                    // navbarRight.version_string &&
+                    //   `${t('Version')}: ${navbarRight.version_string}`,
+                    // navbarRight.version_sha &&
+                    //   `${t('SHA')}: ${navbarRight.version_sha}`,
+                    // navbarRight.build_number &&
+                    //   `${t('Build')}: ${navbarRight.build_number}`,
                   ]
                     .filter(Boolean)
                     .join('\n')}
