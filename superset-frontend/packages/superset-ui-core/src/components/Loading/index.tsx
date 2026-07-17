@@ -17,9 +17,36 @@
  * under the License.
  */
 
-import cls from 'classnames';
-import { Loading as Loader } from '../assets';
+// import { styled } from '@superset-ui/core';
+// import cls from 'classnames';
+// import { Loading as Loader } from '../assets';
 import type { LoadingProps } from './types';
+
+// const LoaderImg = styled.img`
+//   z-index: 99;
+//   width: 50px;
+//   height: unset;
+//   position: relative;
+//   margin: 10px;
+//   &.inline {
+//     margin: 0px;
+//     width: 30px;
+//   }
+//   &.inline-centered {
+//     margin: 0 auto;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+//   &.floating {
+//     padding: 0;
+//     margin: 0;
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//   }
+// `;
 
 import { styled } from '@superset-ui/core';
 
@@ -42,15 +69,13 @@ const LoaderSpinner = styled.div`
     }
   }
 `;
-export function Loading() {
-  return (
-    <LoaderSpinner
-      role="status"
-      aria-live="polite"
-      aria-label="Loading"
-      data-test="loading-indicator"
-    />
-  );
+
+export function Loading({
+  position = 'floating',
+  image,
+  className,
+}: LoadingProps) {
+  return <LoaderSpinner />;
 }
 
 export type { LoadingProps };

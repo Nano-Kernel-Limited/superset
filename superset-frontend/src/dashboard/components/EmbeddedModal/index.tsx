@@ -36,7 +36,7 @@ import {
 } from '@superset-ui/core/components';
 import { useToasts } from 'src/components/MessageToasts/withToasts';
 import { EmbeddedDashboard } from 'src/dashboard/types';
-import { Typography } from '@superset-ui/core/components/Typography';
+// import { Typography } from '@superset-ui/core/components/Typography';
 import { ModalTitleWithIcon } from 'src/components/ModalTitleWithIcon';
 
 const extensionsRegistry = getExtensionsRegistry();
@@ -158,10 +158,9 @@ export const DashboardEmbedControls = ({ dashboardId, onHide }: Props) => {
   const DocsConfigDetails = extensionsRegistry.get(
     'embedded.documentation.configuration_details',
   );
-  const docsDescription = extensionsRegistry.get(
-    'embedded.documentation.description',
-  );
-  const docsUrl = " ";
+  // const docsDescription = extensionsRegistry.get(
+  //   'embedded.documentation.description',
+  // );
 
   return (
     <>
